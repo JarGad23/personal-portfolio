@@ -1,30 +1,79 @@
+"use client";
+
 import Image from "next/image";
+import { motion } from "framer-motion";
+import { ArrowRight } from "lucide-react";
 
 export const Hero = () => {
+  const leftDivVariants = {
+    hidden: { x: -50, opacity: 0 },
+    visible: { x: 0, opacity: 1 },
+  };
+
+  const rightDivVariants = {
+    hidden: { x: 50, opacity: 0 },
+    visible: { x: 0, opacity: 1 },
+  };
+
   return (
     <section
       id="hero"
-      className="w-full flex flex-col sm:flex-row max-w-4xl border-4 border-neutral-200 rounded-lg"
+      className="w-full flex flex-col sm:flex-row gap-y-8 sm:gap-x-8"
     >
-      <div className="w-full sm:w-1/2 h-[350px] sm:h-full flex items-center justify-center">
+      <motion.div
+        initial="hidden"
+        animate="visible"
+        variants={leftDivVariants}
+        transition={{ duration: 0.5 }}
+        whileHover={{
+          opacity: 0.9,
+        }}
+        className="w-full sm:w-1/2 h-[450px] sm:h-full flex items-center justify-center"
+      >
         <div className="relative w-full h-full">
           <Image
             fill
             src="/profile-me.png"
             alt="profile picture"
-            className="object-cover object-center rounded-t-md sm:rounded-tr-none sm:rounded-l-md"
+            className="object-cover object-center rounded-xl"
           />
         </div>
-      </div>
-      <div className="w-full sm:w-1/2 font-semibol p-8 text-neutral-950">
-        <h3 className="text-2xl sm:text-4xl sm:leading-relaxed">
-          <span className="font-bold">Hello, I&apos;m Jarosław.</span> I&apos;m{" "}
-          <span className="font-bold">front-end developer </span>with a{" "}
-          <span className="font-bold">Year of professional expirience.</span> I
-          enjoy building sites & apps mainly using{" "}
-          <span className="font-bold">Next.js</span>
-        </h3>
-      </div>
+      </motion.div>
+      <motion.div
+        initial="hidden"
+        animate="visible"
+        variants={rightDivVariants}
+        transition={{ duration: 0.5 }}
+        className="bg-white w-full sm:w-1/2 font-semibol p-8 rounded-xl"
+      >
+        <h3 className="text-xl">Hi! My name is</h3>
+        <h1 className="font-bold text-4xl text-neutral-900 my-2">
+          Jarosław Gad
+        </h1>
+        <p className="text-md text-neutral-800">
+          I&apos;m a slef-thougt{" "}
+          <span className="font-semibold">Font-end Developer</span>
+          who is trying to improve sites & web-apps everyday. I am createive
+          person who likes to designe and build stuff that later can be used by
+          people in websites. Besides, I really enjoy learning new technologies.
+          Currently, I am mostly familiar with{" "}
+          <span className="font-semibold">React (Next.js)</span>, but in the
+          future I plan to learn a backend language to be more efficient and
+          flexible in my work. If you want to work with me I&apos;m open to new
+          proposal and please feel free to message me in{" "}
+          <a href="#email" className="font-semibold">
+            email
+          </a>{" "}
+          down below.
+        </p>
+        <a
+          href="#projects"
+          className="w-full my-4 bg-neutral-800 text-neutral-200 font-semibold px-4 py-2 rounded-lg flex items-center hover:bg-neutral-600 transition"
+        >
+          Check out my work
+          <ArrowRight className="h-4 w-4 ml-2" />
+        </a>
+      </motion.div>
     </section>
   );
 };
