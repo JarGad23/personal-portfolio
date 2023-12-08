@@ -26,9 +26,9 @@ export const Hero = () => {
         variants={leftDivVariants}
         transition={{ duration: 0.5 }}
         whileHover={{
-          opacity: 0.9,
+          opacity: 0.8,
         }}
-        className="w-full sm:w-1/2 h-[450px] sm:h-full flex items-center justify-center"
+        className="w-full sm:w-1/2 h-[450px] sm:h-auto flex items-center justify-center"
       >
         <div className="relative w-full h-full">
           <Image
