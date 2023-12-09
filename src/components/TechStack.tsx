@@ -11,6 +11,7 @@ export const TechStack = () => {
   };
   return (
     <motion.section
+      id="tech-stack"
       initial="hidden"
       animate="visible"
       variants={sectionVariants}
