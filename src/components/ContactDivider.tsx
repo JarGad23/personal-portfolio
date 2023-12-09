@@ -15,7 +15,7 @@ export const ContactDivider = () => {
       animate="visible"
       variants={sectionVariants}
       transition={{ duration: 0.5 }}
-      className="w-full my-8 flex gap-x-4 gap-y-4 justify-center items-center flex-wrap"
+      className="w-full max-w-4xl my-8 flex gap-x-4 gap-y-4 justify-center items-center flex-wrap"
     >
       <a
         href="#contact"

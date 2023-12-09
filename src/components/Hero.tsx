@@ -18,7 +18,7 @@ export const Hero = () => {
   return (
     <section
       id="hero"
-      className="w-full flex flex-col sm:flex-row gap-y-8 sm:gap-x-8"
+      className="w-full max-w-4xl flex flex-col sm:flex-row gap-y-8 sm:gap-x-8"
     >
       <motion.div
         initial="hidden"
