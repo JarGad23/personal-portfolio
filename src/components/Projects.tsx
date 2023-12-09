@@ -3,14 +3,19 @@
 import { motion } from "framer-motion";
 import { projects } from "../../data/projects";
 import { ProjectItem } from "./ProjectItem";
+import { useSectionInView } from "@/hooks/useSectionInView";
 
 export const Projects = () => {
   const sectionVariants = {
     hidden: { y: 50, opacity: 0 },
     visible: { y: 0, opacity: 1 },
   };
+
+  const { ref } = useSectionInView("projects", 0.5);
+
   return (
     <motion.section
+      ref={ref}
       id="projects"
       initial="hidden"
       animate="visible"
