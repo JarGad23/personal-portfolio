@@ -112,7 +112,7 @@ export const projects: Project[] = [
   },
   {
     label: "Personal Portfolio",
-    image: "/projects/portfoli.png",
+    image: "/projects/portfolio.png",
     description:
       "Personal Portfolio project helps better present my self. Here I add information about me and give you a chance to known me better. To build this I used Next.js Typescript Tailwind CSS, Framer Motion and React Email. I took time to create a great looking and animated design. Also is my first project using framer motion.",
     technologies: [

@@ -15,7 +15,7 @@ export const TechStack = () => {
       animate="visible"
       variants={sectionVariants}
       transition={{ duration: 0.5 }}
-      className="w-full flex flex-col items-center justify-center gap-y-8 mt-8"
+      className="w-full max-w-4xl flex flex-col items-center justify-center gap-y-8 mt-8"
     >
       <div className="bg-zinc-100 rounded-2xl px-8 py-3 opacity-90">
         <h2 className="font-semibold">My Tech Stack</h2>
