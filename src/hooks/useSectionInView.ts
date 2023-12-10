@@ -9,7 +9,10 @@ export type SectionName =
   | "contact"
   | "email";
 
-export const useSectionInView = (sectionName: SectionName, threshold = 75) => {
+export const useSectionInView = (
+  sectionName: SectionName,
+  threshold = 0.75
+) => {
   const { ref, inView } = useInView({
     threshold,
   });
