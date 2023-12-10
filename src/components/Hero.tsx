@@ -65,7 +65,7 @@ export const Hero = () => {
           future I plan to learn a backend language to be more efficient and
           flexible in my work. If you want to work with me I&apos;m open to new
           proposal and please feel free to message me in{" "}
-          <a href="#email" className="font-semibold">
+          <a href="#contact" className="font-semibold">
             email
           </a>{" "}
           down below.

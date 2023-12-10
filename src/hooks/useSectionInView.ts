@@ -2,12 +2,7 @@ import { useEffect } from "react";
 import { useInView } from "react-intersection-observer";
 import { useActiveSectionContext } from "@/context/active-section-context";
 
-export type SectionName =
-  | "hero"
-  | "tech-stack"
-  | "projects"
-  | "contact"
-  | "email";
+export type SectionName = "hero" | "tech-stack" | "projects" | "contact";
 
 export const useSectionInView = (
   sectionName: SectionName,
