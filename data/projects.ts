@@ -126,7 +126,7 @@ export const projects: Project[] = [
         icon: "/svgs/tailwind-css.svg",
       },
     ],
-    href: "Need to add",
+    href: "https://personal-portfolio-nine-orpin.vercel.app/",
     github: "https://github.com/JarGad23/personal-portfolio",
   },
 ];
