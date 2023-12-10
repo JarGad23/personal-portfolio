@@ -31,12 +31,6 @@ const navRoutes = [
     href: "#contact",
     Icon: <MessageCircle />,
   },
-  {
-    label: "Email",
-    value: "email",
-    href: "#email",
-    Icon: <Mail />,
-  },
 ];
 
 export const Navbar = () => {
