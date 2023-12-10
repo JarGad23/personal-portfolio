@@ -4,7 +4,7 @@ import { FolderGit, Home, Layers, Mail, MessageCircle } from "lucide-react";
 import { motion } from "framer-motion";
 import { useActiveSectionContext } from "@/context/active-section-context";
 import { cn } from "../../libs/utils";
-import { SectionName } from "@/hooks/useSectionInView";
+import type { SectionName } from "@/hooks/useSectionInView";
 
 const navRoutes = [
   {
@@ -50,28 +50,24 @@ export const Navbar = () => {
       className="w-full max-w-5xl sticky top-0 p-4 sm:my-4 sm:rounded-2xl bg-slate-100 shadow-md  mx-auto z-50"
     >
       <ul className="flex items-center sm:justify-around justify-center flex-wrap gap-x-6 gap-y-4">
-        {navRoutes.map((route, index) => {
-          let isActive = route.value === activeSection;
-
-          return (
-            <li
-              key={route.value}
-              className={cn(
-                "text-sm sm:text-base font-semibold text-neutral-900",
-                isActive && "text-gray-400 underline"
-              )}
-              onClick={() => {
-                setActiveSection(route.value as SectionName);
-                setTimeOfLasClick(Date.now());
-              }}
-            >
-              <a href={route.href} className="flex items-center gap-x-2">
-                {route.Icon}
-                {route.label}
-              </a>
-            </li>
-          );
-        })}
+        {navRoutes.map((route, index) => (
+          <li
+            key={route.value}
+            className={cn(
+              "text-sm sm:text-base font-semibold text-neutral-900",
+              route.value === activeSection ? "text-gray-400 underline" : ""
+            )}
+            onClick={() => {
+              setActiveSection(route.value as SectionName);
+              setTimeOfLasClick(Date.now());
+            }}
+          >
+            <a href={route.href} className="flex items-center gap-x-2">
+              {route.Icon}
+              {route.label}
+            </a>
+          </li>
+        ))}
       </ul>
     </motion.nav>
   );

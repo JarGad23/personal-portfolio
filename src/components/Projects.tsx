@@ -26,7 +26,7 @@ export const Projects = () => {
       <div className="bg-zinc-100 rounded-2xl px-8 py-3 opacity-90">
         <h2 className="font-semibold">Projects I&apos;v worked on</h2>
       </div>
-      <div className="w-full grid grid-cols-1 sm:grid-cols-2 gap-8">
+      <div className="w-full h-auto grid grid-cols-1 lg:grid-cols-2 gap-8">
         {projects.map((project, index) => (
           <ProjectItem key={project.label} project={project} index={index} />
         ))}

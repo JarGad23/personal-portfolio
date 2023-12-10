@@ -5,7 +5,6 @@ import { Project } from "../../data/projects";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { cn } from "../../libs/utils";
-import { ArrowRight } from "lucide-react";
 
 type ProjectItemPorps = {
   project: Project;
@@ -54,11 +53,11 @@ export const ProjectItem = ({ project, index }: ProjectItemPorps) => {
       custom={index}
       onMouseEnter={() => setIsHovering(true)}
       onMouseLeave={() => setIsHovering(false)}
-      className="relative w-full h-[400px] sm:h-[500px] rounded-lg"
+      className="relative w-full h-[600px] rounded-lg"
     >
       <motion.div
         className={cn(
-          "absolute inset-0 z-20 bg-black opacity-50 rounded-xl transition duration-500 ease-in-out",
+          "max-w-full h-full absolute inset-0 z-20 bg-black opacity-50 rounded-xl transition duration-500 ease-in-out",
           isHovering && "opacity-80"
         )}
       />
@@ -66,9 +65,9 @@ export const ProjectItem = ({ project, index }: ProjectItemPorps) => {
         src={project.image}
         fill
         alt="Project image"
-        className="object-cover object-center rounded-xl"
+        className="object-contain object-center rounded-xl"
       />
-      <div className="absolute z-30 p-8 space-y-8">
+      <div className="absolute z-30 p-8 space-y-8 max-w-full">
         <h3 className="font-bold text-white text-3xl">{project.label}</h3>
         {isHovering ? (
           <>
@@ -82,6 +81,7 @@ export const ProjectItem = ({ project, index }: ProjectItemPorps) => {
               <motion.div className="flex gap-x-4">
                 {project.technologies.map((technologie, i) => (
                   <motion.div
+                    key={`${technologie}-${i}`}
                     variants={fadeInFromSideAnimationVariants}
                     initial="initial"
                     whileInView="animate"
