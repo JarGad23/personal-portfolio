@@ -4,6 +4,7 @@ import "./globals.css";
 import { Footer } from "@/components/Footer";
 import { Navbar } from "@/components/Navbar";
 import { ActiveSectionContextProvider } from "@/context/active-section-context";
+import { Toaster } from "sonner";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -27,6 +28,7 @@ export default function RootLayout({
           {children}
           <Footer />
         </ActiveSectionContextProvider>
+        <Toaster position="top-center" richColors />
       </body>
     </html>
   );

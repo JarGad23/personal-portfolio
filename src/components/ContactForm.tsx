@@ -6,6 +6,7 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { TFormValidator, formValidator } from "../../libs/formValidator";
 import { useState } from "react";
+import { toast } from "sonner";
 
 export const ContactForm = () => {
   const [isLoading, setIsLoading] = useState(false);
@@ -26,8 +27,10 @@ export const ContactForm = () => {
         emailSender,
         message,
       });
+      toast.success("Message sent successfully.");
     } catch (error) {
       console.log("Something went wrong");
+      toast.error("Cannot send message. Try again.");
     } finally {
       setValue("emailSender", "");
       setValue("message", "");

@@ -1,7 +1,7 @@
 "use client";
 
 import { useSectionInView } from "@/hooks/useSectionInView";
-import { stack } from "../../data/stack";
+import { stack } from "../data/stack";
 import { StackItem } from "./StackItem";
 import { motion } from "framer-motion";
 
