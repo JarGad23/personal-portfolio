@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import { StackType } from "../../data/stack";
+import { StackType } from "../data/stack";
 import { motion } from "framer-motion";
 
 type StackItemProps = {
