@@ -17,17 +17,22 @@ Visit my portfolio live at [Your Portfolio URL](https://vercel.com/jarosz23/pers
 Follow these steps to run the portfolio on your local machine:
 
 1. **Clone the Repository:**
+
    ```bash
    git clone https://github.com/JarGad23/personal-portfolio
 2. **Navigate to the Project Directory:**
+
    ```bash
    cd directory-where-you-cloned-repo
 3. **Install Dependencies:**
+
    ```bash
    npm install
 4. **Run the Development Server:**
-    ```bash
+
+   ```bash
     npm run dev
+
 5. **Open in Your Browser:**
     Open your browser and visit http://localhost:3000.
 
