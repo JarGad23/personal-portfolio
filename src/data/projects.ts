@@ -1,8 +1,9 @@
 import { StaticImageData } from "next/image";
-import digitalHippo from "/public/images/digital-hippo.png";
+import twitchClone from "/public/images/twitch-clone.png";
 import messenger from "/public/images/messenger.png";
 import portfolio from "/public/images/portfolio.png";
 import taskify from "/public/images/taskify.png";
+import modernTasklist from "/public/images/modern-tasklist.png";
 
 export type Project = {
   label: string;
@@ -17,10 +18,10 @@ export type Project = {
 
 export const projects: Project[] = [
   {
-    label: "Digital Hippo",
-    image: digitalHippo,
+    label: "Twitch Clone",
+    image: twitchClone,
     description:
-      "This project represents a digital marketplace when people can buy and sell digital products. Is build with Next.js, Typescript, MongoDB and Payload cms. Project include authentication and payment flow using Stripe. Part that I am most proud of is build whole api structure using trpc that provides typesafty between backend and frontend.",
+      "This project is a twitch clone. You can upload yout images by uploadthing and live stram your stream using live kit that create a stream key that you connects into OBS or other streaming program. Functionality of this app is nearly same a twitch, you can also fallow and block people, manage community and chatting in live time.",
     technologies: [
       {
         icon: "/svgs/typescript.svg",
@@ -32,10 +33,10 @@ export const projects: Project[] = [
         icon: "/svgs/tailwind-css.svg",
       },
       {
-        icon: "/svgs/node.svg",
+        icon: "/svgs/prisma.svg",
       },
       {
-        icon: "/svgs/mongodb.svg",
+        icon: "/svgs/mysql.svg",
       },
     ],
     href: "https://digital-marketplace-production-80c9.up.railway.app/",
@@ -68,7 +69,7 @@ export const projects: Project[] = [
   },
   {
     label: "Moder tasklist",
-    image: taskify,
+    image: modernTasklist,
     description:
       "This is a small project where users can store their tasks. Also like the other this project is build on top of the Next.Js, Typescript, Prisma, MongoDB and for styling Tailwind CSS. At this project i use both API and server actions to manage app workflow.",
     technologies: [
@@ -88,7 +89,7 @@ export const projects: Project[] = [
         icon: "/svgs/mongodb.svg",
       },
     ],
-    href: "Need to add",
+    href: "https://modern-task-list.vercel.app",
     github: "https://github.com/JarGad23/modern-task-list",
   },
   {

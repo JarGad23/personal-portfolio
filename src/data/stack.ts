@@ -49,6 +49,10 @@ export const stack: StackType[] = [
     icon: "/svgs/mongodb.svg",
   },
   {
+    label: "Go",
+    icon: "/svgs/go.svg",
+  },
+  {
     label: "VS Code",
     icon: "/svgs/vs-code.svg",
   },
