@@ -1,9 +1,9 @@
 import { StaticImageData } from "next/image";
-import twitchClone from "/public/images/twitch-clone.png";
+import twitchClone from "/public/images/twitch.png";
 import messenger from "/public/images/messenger.png";
 import portfolio from "/public/images/portfolio.png";
 import taskify from "/public/images/taskify.png";
-import modernTasklist from "/public/images/modern-tasklist.png";
+import modernTasklist from "/public/images/tasklist.png";
 
 export type Project = {
   label: string;
