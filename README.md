@@ -4,7 +4,7 @@ Welcome to my GitHub repository showcasing my personal portfolio! 🚀
 
 ## 🌐 Explore Online
 
-Visit my portfolio live [here](https://vercel.com/jarosz23/personal-portfolio).
+Visit my portfolio live [here](https://personal-portfolio-nine-orpin.vercel.app).
 
 ## 🚀 Technologies Used
 
