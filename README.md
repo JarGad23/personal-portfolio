@@ -42,3 +42,4 @@ Follow these steps to run the portfolio on your local machine:
 - Beautifully crafted design.
 - TypeScript for a robust codebase.
 - Smooth animations powered by Framer Motion.
+- Email sending directly from website
