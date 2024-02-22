@@ -11,6 +11,7 @@ Visit my portfolio live [here](https://personal-portfolio-nine-orpin.vercel.app)
 - **Typescript**: Supercharge your JavaScript with static types!
 - **Next.js**: The React framework for production.
 - **Framer Motion**: A production-ready motion library for React.
+- **Resend**: Sending email service.
 
 ## 🛠️ How to Use Locally
 
