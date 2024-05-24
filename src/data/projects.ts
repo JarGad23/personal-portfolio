@@ -7,7 +7,7 @@ import modernTasklist from "/public/images/tasklist.png";
 
 export type Project = {
   label: string;
-  image: StaticImageData;
+  image: typeof StaticImageData;
   description: string;
   technologies: {
     icon: string;
