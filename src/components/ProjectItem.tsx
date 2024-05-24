@@ -66,6 +66,7 @@ export const ProjectItem = ({ project, index }: ProjectItemPorps) => {
         fill
         alt="Project image"
         className="object-cover rounded-xl"
+        loading="eager"
       />
       <div className="absolute z-30 p-8 space-y-8 max-w-full">
         <h3 className="font-bold text-white text-3xl">{project.label}</h3>
@@ -97,6 +98,7 @@ export const ProjectItem = ({ project, index }: ProjectItemPorps) => {
                         src={technologie.icon}
                         className="object-cover object-center"
                         alt="Technologie Icon"
+                        loading="eager"
                       />
                     </div>
                   </motion.div>

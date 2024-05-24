@@ -1,15 +1,11 @@
 "use client";
 
-import { useSectionInView } from "@/hooks/useSectionInView";
 import { motion } from "framer-motion";
 import { ContactForm } from "./ContactForm";
 
 export const Contact = () => {
-  const { ref } = useSectionInView("contact", 0.5);
-
   return (
     <motion.section
-      ref={ref}
       id="contact"
       initial={{
         opacity: 0,

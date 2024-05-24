@@ -20,13 +20,16 @@ export const ContactDivider = () => {
       <a
         href="#contact"
         className="bg-neutral-800 text-neutral-200 rounded-2xl px-8 py-3 font-semibold flex items-center hover:bg-neutral-600 transition"
+        aria-label="Contact button"
       >
         Contact me
         <ArrowRight className="h-4 w-4 ml-2" />
       </a>
       <a
-        download="/downloads/cv.pdf"
+        download="/cv.pdf"
+        href="/cv.pdf"
         className="cursor-pointer bg-white shadow-md text-neutral-800 rounded-2xl px-8 py-3 font-semibold flex items-center hover:bg-neutral-100 transition"
+        aria-label="Download CV button"
       >
         Download CV
         <ArrowDownToLine className="h-4 w-4 ml-2" />
@@ -35,6 +38,7 @@ export const ContactDivider = () => {
         href="https://www.linkedin.com/in/jaros%C5%82aw-gad-270a93280/"
         target="_blank"
         className="cursor-pointer bg-white shadow-md text-neutral-800 p-3 rounded-full hover:bg-neutral-100 transition"
+        aria-label="LinkedIn profile link"
       >
         <Linkedin />
       </a>
@@ -42,6 +46,7 @@ export const ContactDivider = () => {
         href="https://github.com/JarGad23"
         target="_blank"
         className="cursor-pointer bg-neutral-800 shadow-md text-neutral-200 p-3 rounded-full hover:bg-neutral-600 transition"
+        aria-label="GitHub profile link"
       >
         <Github />
       </a>

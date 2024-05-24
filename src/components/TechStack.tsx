@@ -1,6 +1,5 @@
 "use client";
 
-import { useSectionInView } from "@/hooks/useSectionInView";
 import { stack } from "../data/stack";
 import { StackItem } from "./StackItem";
 import { motion } from "framer-motion";
@@ -11,11 +10,8 @@ export const TechStack = () => {
     visible: { y: 0, opacity: 1 },
   };
 
-  const { ref } = useSectionInView("tech-stack", 0.5);
-
   return (
     <motion.section
-      ref={ref}
       id="tech-stack"
       initial="hidden"
       animate="visible"
