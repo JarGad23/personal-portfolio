@@ -2,8 +2,7 @@
 
 import { FolderGit, Home, Layers, MessageCircle } from "lucide-react";
 import { motion } from "framer-motion";
-import { cn } from "../../libs/utils";
-import useActiveSection from "@/hooks/useSectionInView";
+import { useActiveSection } from "@/hooks/useSectionInView";
 
 const navRoutes = [
   {
@@ -32,22 +31,22 @@ const navRoutes = [
   },
 ];
 
-const scrollToSection = (id: string) => {
-  const navbarHeight = 80;
-  const element = document.getElementById(id);
-  if (element) {
-    const offsetTop =
-      element.getBoundingClientRect().top + window.scrollY - navbarHeight;
-    window.scrollTo({
-      top: offsetTop,
-      behavior: "smooth",
-    });
-  }
-};
-
 export const Navbar = () => {
   const routeIds = navRoutes.map((route) => route.value);
   const activeSection = useActiveSection(routeIds);
+
+  const scrollToSection = (id: string) => {
+    const navbarHeight = 80;
+    const element = document.getElementById(id);
+    if (element) {
+      const offsetTop =
+        element.getBoundingClientRect().top + window.scrollY - navbarHeight;
+      window.scrollTo({
+        top: offsetTop,
+        behavior: "smooth",
+      });
+    }
+  };
 
   return (
     <motion.nav

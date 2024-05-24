@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-const useActiveSection = (
+export const useActiveSection = (
   sectionIds: string[],
   threshold = 0.5
 ): string | null => {
@@ -55,5 +55,3 @@ const useActiveSection = (
 
   return activeSection;
 };
-
-export default useActiveSection;

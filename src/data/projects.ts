@@ -1,4 +1,4 @@
-import { StaticImageData } from "next/image";
+import StaticImageData from "next/image";
 import twitchClone from "/public/images/twitch.png";
 import messenger from "/public/images/messenger.png";
 import portfolio from "/public/images/portfolio.png";
