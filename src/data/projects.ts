@@ -1,13 +1,12 @@
-import { StaticImageData } from "next/image";
-import twitchClone from "/public/images/twitch.png";
-import messenger from "/public/images/messenger.png";
-import portfolio from "/public/images/portfolio.png";
-import taskify from "/public/images/taskify.png";
-import modernTasklist from "/public/images/tasklist.png";
+const twitchClone = "/images/twitch.png";
+const messenger = "/images/messenger.png";
+const portfolio = "/images/portfolio.png";
+const taskify = "/images/taskify.png";
+const modernTasklist = "/images/tasklist.png";
 
 export type Project = {
   label: string;
-  image: StaticImageData;
+  image: string;
   description: string;
   technologies: {
     icon: string;

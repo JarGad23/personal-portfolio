@@ -1,10 +1,8 @@
 "use client";
 
-import { FolderGit, Home, Layers, Mail, MessageCircle } from "lucide-react";
+import { FolderGit, Home, Layers, MessageCircle } from "lucide-react";
 import { motion } from "framer-motion";
-import { useActiveSectionContext } from "@/context/active-section-context";
-import { cn } from "../../libs/utils";
-import type { SectionName } from "@/hooks/useSectionInView";
+import { useActiveSection } from "@/hooks/useSectionInView";
 
 const navRoutes = [
   {
@@ -34,8 +32,21 @@ const navRoutes = [
 ];
 
 export const Navbar = () => {
-  const { activeSection, setActiveSection, setTimeOfLasClick } =
-    useActiveSectionContext();
+  const routeIds = navRoutes.map((route) => route.value);
+  const activeSection = useActiveSection(routeIds);
+
+  const scrollToSection = (id: string) => {
+    const navbarHeight = 80;
+    const element = document.getElementById(id);
+    if (element) {
+      const offsetTop =
+        element.getBoundingClientRect().top + window.scrollY - navbarHeight;
+      window.scrollTo({
+        top: offsetTop,
+        behavior: "smooth",
+      });
+    }
+  };
 
   return (
     <motion.nav
@@ -45,22 +56,28 @@ export const Navbar = () => {
     >
       <ul className="flex items-center sm:justify-around justify-center flex-wrap gap-x-6 gap-y-4">
         {navRoutes.map((route, index) => (
-          <li
+          <motion.li
             key={route.value}
-            className={cn(
-              "text-sm sm:text-base font-semibold text-neutral-900",
-              route.value === activeSection ? "text-gray-400 underline" : ""
-            )}
-            onClick={() => {
-              setActiveSection(route.value as SectionName);
-              setTimeOfLasClick(Date.now());
+            className="relative text-sm sm:text-base font-semibold"
+            whileHover={{
+              color: "#146CCD",
             }}
+            onClick={(e) => {
+              e.preventDefault();
+              scrollToSection(route.value);
+            }}
+            initial={{ color: "#1e293b" }}
+            animate={{
+              color: route.value === activeSection ? "#146CCD" : "#1e293b",
+            }}
+            transition={{ duration: 0.3 }}
+            style={{ cursor: "pointer" }}
           >
             <a href={route.href} className="flex items-center gap-x-2">
               {route.Icon}
               {route.label}
             </a>
-          </li>
+          </motion.li>
         ))}
       </ul>
     </motion.nav>

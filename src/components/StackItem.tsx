@@ -37,6 +37,7 @@ export const StackItem = ({ item, index }: StackItemProps) => {
       y: 0,
       transition: {
         delay: 0.05 * index,
+        ease: "easeOut",
       },
     }),
   };
@@ -58,15 +59,15 @@ export const StackItem = ({ item, index }: StackItemProps) => {
         initial="hidden"
         animate={isVisible ? "visible" : "hidden"}
         variants={sectionVariants}
-        transition={{ duration: 0.2 }}
-        className="absolute inset-0 bg-black z-10 flex items-center justify-center"
+        transition={{ duration: 0.2, ease: "easeOut", delay: 0.1 }}
+        className="absolute inset-0 bg-black z-10 flex items-center justify-center rounded-lg"
       />
       {isVisible && (
         <motion.div
           initial="hidden"
           animate="visible"
           variants={headingVariants}
-          transition={{ duration: 0.3 }}
+          transition={{ duration: 0.3, ease: "easeOut", delay: 0.1 }}
           className="absolute inset-0 z-50 flex items-center justify-center text-center"
         >
           <h3 className="font-bold text-xl text-neutral-100 ">{item.label}</h3>
@@ -79,6 +80,7 @@ export const StackItem = ({ item, index }: StackItemProps) => {
           fill
           alt="Tech Icon"
           className="object-cover object-center"
+          loading="eager"
         />
       </div>
     </motion.div>

@@ -1,26 +1,54 @@
-import { useEffect } from "react";
-import { useInView } from "react-intersection-observer";
-import { useActiveSectionContext } from "@/context/active-section-context";
+import { useState, useEffect } from "react";
 
-export type SectionName = "hero" | "tech-stack" | "projects" | "contact";
-
-export const useSectionInView = (
-  sectionName: SectionName,
-  threshold = 0.75
-) => {
-  const { ref, inView } = useInView({
-    threshold,
-  });
-
-  const { setActiveSection, timeOfLastClick } = useActiveSectionContext();
+export const useActiveSection = (sectionIds: string[]): string | null => {
+  const [activeSection, setActiveSection] = useState<string | null>(null);
+  const [currentSection, setCurrentSection] = useState<string | null>(null);
 
   useEffect(() => {
-    if (inView && Date.now() - timeOfLastClick > 1000) {
-      setActiveSection(sectionName);
-    }
-  }, [inView, setActiveSection, timeOfLastClick, sectionName]);
+    const handleIntersection = (entries: IntersectionObserverEntry[]) => {
+      const visibleSections = entries.filter((entry) => entry.isIntersecting);
+      if (visibleSections.length > 0) {
+        const mostVisibleSection = visibleSections.reduce((prev, current) => {
+          return current.intersectionRatio > prev.intersectionRatio
+            ? current
+            : prev;
+        });
+        if (mostVisibleSection.target.id !== currentSection) {
+          setCurrentSection(mostVisibleSection.target.id);
+        }
+      }
+    };
 
-  return {
-    ref,
-  };
+    const observer = new IntersectionObserver(handleIntersection, {
+      root: null,
+      rootMargin: "0px",
+      threshold: Array.from({ length: 101 }, (_, index) => index / 100),
+    });
+
+    sectionIds.forEach((id) => {
+      const element = document.getElementById(id);
+      if (element) observer.observe(element);
+    });
+
+    return () => {
+      sectionIds.forEach((id) => {
+        const element = document.getElementById(id);
+        if (element) observer.unobserve(element);
+      });
+    };
+  }, [sectionIds, currentSection]);
+
+  useEffect(() => {
+    const debounceTimeout = setTimeout(() => {
+      if (currentSection !== activeSection) {
+        setActiveSection(currentSection);
+      }
+    }, 100);
+
+    return () => {
+      clearTimeout(debounceTimeout);
+    };
+  }, [currentSection, activeSection]);
+
+  return activeSection;
 };

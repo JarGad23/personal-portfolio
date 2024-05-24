@@ -3,11 +3,8 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
-import { useSectionInView } from "@/hooks/useSectionInView";
 
 export const Hero = () => {
-  const { ref } = useSectionInView("hero", 0.5);
-
   const leftDivVariants = {
     hidden: { x: -50, opacity: 0 },
     visible: { x: 0, opacity: 1 },
@@ -20,7 +17,6 @@ export const Hero = () => {
 
   return (
     <section
-      ref={ref}
       id="hero"
       className="w-full max-w-4xl flex flex-col sm:flex-row gap-y-8 sm:gap-x-8"
     >
@@ -37,9 +33,10 @@ export const Hero = () => {
         <div className="relative w-full h-full">
           <Image
             fill
-            src="/profile-me.png"
+            src="/profile-me.webp"
             alt="profile picture"
             className="object-cover object-center rounded-xl"
+            loading="eager"
           />
         </div>
       </motion.div>
