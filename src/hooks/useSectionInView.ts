@@ -1,9 +1,6 @@
 import { useState, useEffect } from "react";
 
-export const useActiveSection = (
-  sectionIds: string[],
-  threshold = 0.5
-): string | null => {
+export const useActiveSection = (sectionIds: string[]): string | null => {
   const [activeSection, setActiveSection] = useState<string | null>(null);
   const [currentSection, setCurrentSection] = useState<string | null>(null);
 
@@ -46,7 +43,7 @@ export const useActiveSection = (
       if (currentSection !== activeSection) {
         setActiveSection(currentSection);
       }
-    }, 100); // Adjust debounce delay as needed
+    }, 100);
 
     return () => {
       clearTimeout(debounceTimeout);

@@ -1,8 +1,4 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {
-  images: {
-    domains: ["localhost", "personal-portfolio-nine-orpin.vercel.app"],
-  },
-};
+const nextConfig = {};
 
 module.exports = nextConfig;

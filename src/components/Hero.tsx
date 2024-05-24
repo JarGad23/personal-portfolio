@@ -33,7 +33,7 @@ export const Hero = () => {
         <div className="relative w-full h-full">
           <Image
             fill
-            src="/profile-me.png"
+            src="/profile-me.webp"
             alt="profile picture"
             className="object-cover object-center rounded-xl"
             loading="eager"
