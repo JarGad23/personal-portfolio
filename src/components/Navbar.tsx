@@ -52,7 +52,7 @@ export const Navbar = () => {
     <motion.nav
       initial={{ opacity: 0, y: -50 }}
       animate={{ opacity: 1, y: 0 }}
-      className="w-full max-w-5xl sticky top-0 p-4 sm:my-4 sm:rounded-2xl bg-slate-100 shadow-md  mx-auto z-50"
+      className="w-full max-w-5xl sticky top-0 p-4 sm:my-4 sm:rounded-2xl bg-slate-100/75 shadow-md mx-auto z-50 backdrop-blur-lg transition"
     >
       <ul className="flex items-center sm:justify-around justify-center flex-wrap gap-x-6 gap-y-4">
         {navRoutes.map((route, index) => (

@@ -65,7 +65,7 @@ export const ProjectItem = ({ project, index }: ProjectItemPorps) => {
         src={project.image}
         fill
         alt="Project image"
-        className="object-cover rounded-xl"
+        className="relative object-contain rounded-xl"
         loading="eager"
       />
       <div className="absolute z-30 p-8 space-y-8 max-w-full">

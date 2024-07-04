@@ -18,7 +18,7 @@ export const Hero = () => {
   return (
     <section
       id="hero"
-      className="w-full max-w-4xl flex flex-col sm:flex-row gap-y-8 sm:gap-x-8"
+      className="w-full max-w-4xl flex flex-col md:flex-row gap-y-8 md:gap-x-8"
     >
       <motion.div
         initial="hidden"
@@ -26,14 +26,14 @@ export const Hero = () => {
         variants={leftDivVariants}
         transition={{ duration: 0.5 }}
         whileHover={{
-          opacity: 0.8,
+          scale: 1.05,
         }}
-        className="w-full sm:w-1/2 h-[450px] sm:h-auto flex items-center justify-center"
+        className="w-full md:w-1/2 h-[450px] md:h-auto flex items-center justify-center"
       >
         <div className="relative w-full h-full">
           <Image
             fill
-            src="/profile-me.webp"
+            src="/me-photo.png"
             alt="profile picture"
             className="object-cover object-center rounded-xl"
             loading="eager"
@@ -45,7 +45,7 @@ export const Hero = () => {
         animate="visible"
         variants={rightDivVariants}
         transition={{ duration: 0.5 }}
-        className="bg-white w-full sm:w-1/2 font-semibol p-8 rounded-xl"
+        className="bg-white w-full md:w-1/2 font-semibol p-8 rounded-xl"
       >
         <h3 className="text-xl">Hi! My name is</h3>
         <h1 className="font-bold text-4xl text-neutral-900 my-2">
