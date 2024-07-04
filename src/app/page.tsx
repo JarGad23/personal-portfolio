@@ -11,8 +11,6 @@ import { useWindowSize } from "react-use";
 export default function Home() {
   const { width } = useWindowSize();
 
-  console.log(width);
-
   return (
     <MotionConfig reducedMotion={width < 786 ? "always" : "never"}>
       <div className="w-full px-4 md:px-8 mx-auto flex flex-col items-center mt-12">
